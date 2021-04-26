@@ -8,8 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Produto::class, function (Faker $faker) {
     return [
         'nome' => $faker->unique()->word,
-        'preco' => $faker->randomFloat(4, 2),
-        'foto' => $faker->image('public/storage/fotos', 640, 480, null),
-
+        'preco' => $faker->numberBetween($min = 50, $max = 50000),
+        'foto' => $faker->image('public/storage/fotos', 640, 480)
     ];
 });
